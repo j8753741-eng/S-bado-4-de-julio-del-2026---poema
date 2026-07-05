@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Esta noche, mi corazón decidió amarte</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#fff8ef 0%,#f8e7ff 25%,#d8d9ff 60%,#070918 100%);
+
+font-family:'Cormorant Garamond',serif;
+
+overflow-x:hidden;
+
+color:white;
+
+}
+
+/* Fondo romántico totalmente distinto */
+
+.sky{
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:-5;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+box-shadow:0 0 12px white;
+}
+
+@keyframes twinkle{
+
+0%,100%{
+opacity:.15;
+transform:scale(.8);
+}
+
+50%{
+opacity:1;
+transform:scale(1.9);
+}
+
+}
+
+.orbit{
+
+position:absolute;
+border:1px solid rgba(255,255,255,.08);
+border-radius:50%;
+animation:rotate 45s linear infinite;
+
+}
+
+@keyframes rotate{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+.moon{
+
+position:absolute;
+
+top:90px;
+right:80px;
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle at 35% 35%,
+#fffdf8,
+#fff2ca 45%,
+#f8d98e 100%);
+
+box-shadow:
+
+0 0 40px #ffe8b2,
+0 0 90px rgba(255,230,160,.6);
+
+}
+
+.container{
+
+width:min(900px,92%);
+margin:auto;
+padding:80px 0;
+
+}
+
+.hero{
+
+position:relative;
+
+padding:80px 60px;
+
+border-radius:40px;
+
+background:
+
+linear-gradient(180deg,
+rgba(255,255,255,.17),
+rgba(255,255,255,.05));
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.18);
+
+overflow:hidden;
+
+box-shadow:
+0 0 50px rgba(255,255,255,.10);
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,.18),
+transparent 70%);
+
+top:-250px;
+left:-170px;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:420px;
+height:420px;
+
+background:
+radial-gradient(circle,
+rgba(255,170,220,.16),
+transparent 72%);
+
+bottom:-220px;
+right:-170px;
+
+}
+
+.title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:72px;
+
+line-height:1.15;
+
+text-align:center;
+
+color:#fff8f8;
+
+text-shadow:
+
+0 0 18px rgba(255,255,255,.8),
+0 0 35px rgba(255,182,193,.6);
+
+margin-bottom:20px;
+
+}
+
+.subtitle{
+
+font-family:'Cinzel',serif;
+
+letter-spacing:5px;
+
+text-align:center;
+
+font-size:15px;
+
+color:#fff4d2;
+
+margin-bottom:55px;
+
+}
+
+.separator{
+
+width:220px;
+height:2px;
+
+margin:35px auto;
+
+background:linear-gradient(to right,
+transparent,
+#fff,
+#ffd6f2,
+#fff,
+transparent);
+
+}
+
+.date{
+
+text-align:center;
+
+font-size:22px;
+
+color:#fff0c4;
+
+margin-bottom:60px;
+
+}
+
+.letter{
+
+font-size:31px;
+
+line-height:2.15;
+
+font-weight:400;
+
+color:#fffdfc;
+
+text-align:justify;
+
+}
+
+.letter p{
+
+margin-bottom:38px;
+text-indent:35px;
+
+}
+
+.drop{
+
+float:left;
+
+font-size:88px;
+
+line-height:.75;
+
+padding-right:14px;
+
+font-family:'Great Vibes',cursive;
+
+color:#ffe2ef;
+
+text-shadow:0 0 20px #ffd4f0;
+
+}
+
+.quote{
+
+margin:60px 0;
+
+padding:35px;
+
+border-left:4px solid rgba(255,220,170,.8);
+
+background:rgba(255,255,255,.06);
+
+border-radius:25px;
+
+font-style:italic;
+
+font-size:29px;
+
+color:#fff6d9;
+
+box-shadow:0 0 30px rgba(255,255,255,.06);
+
+}
+
+.floating-heart{
+
+position:absolute;
+
+font-size:20px;
+
+opacity:.18;
+
+animation:floatHeart linear infinite;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(40px) scale(.7);
+
+opacity:0;
+
+}
+
+30%{
+
+opacity:.18;
+
+}
+
+100%{
+
+transform:translateY(-110vh) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+.promise{
+
+margin:70px 0;
+
+padding:45px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(135deg,
+rgba(255,245,250,.14),
+rgba(255,255,255,.05));
+
+border:1px solid rgba(255,255,255,.18);
+
+box-shadow:0 0 35px rgba(255,220,235,.10);
+
+}
+
+.promise h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:52px;
+
+text-align:center;
+
+color:#ffe8f4;
+
+margin-bottom:28px;
+
+}
+
+.promise p{
+
+font-size:30px;
+
+line-height:2.1;
+
+text-align:justify;
+
+}
+
+.signature{
+
+margin-top:90px;
+
+text-align:center;
+
+}
+
+.signature .goodnight{
+
+font-size:38px;
+
+color:#fff4cb;
+
+margin-bottom:18px;
+
+}
+
+.signature .name{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+color:#ffd8ec;
+
+text-shadow:0 0 25px rgba(255,200,235,.7);
+
+}
+
+.footerGlow{
+
+margin-top:70px;
+
+height:2px;
+
+background:linear-gradient(to right,
+transparent,
+#ffffff,
+#ffe7f3,
+#ffffff,
+transparent);
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding:35px 22px;
+
+}
+
+.title{
+
+font-size:48px;
+
+}
+
+.subtitle{
+
+font-size:12px;
+
+letter-spacing:3px;
+
+}
+
+.date{
+
+font-size:18px;
+
+}
+
+.letter{
+
+font-size:24px;
+
+}
+
+.quote{
+
+font-size:23px;
+
+}
+
+.promise h2{
+
+font-size:40px;
+
+}
+
+.promise p{
+
+font-size:23px;
+
+}
+
+.signature .goodnight{
+
+font-size:30px;
+
+}
+
+.signature .name{
+
+font-size:56px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sky">
+
+<div class="moon"></div>
+
+<div class="orbit"
+style="width:700px;height:700px;left:-250px;top:-250px;"></div>
+
+<div class="orbit"
+style="width:950px;height:950px;right:-420px;bottom:-380px;animation-duration:70s;"></div>
+
+</div>
+
+<script>
+
+for(let i=0;i<180;i++){
+
+const s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+
+s.style.animationDelay=Math.random()*5+"s";
+
+document.querySelector(".sky").appendChild(s);
+
+}
+
+for(let i=0;i<26;i++){
+
+const h=document.createElement("div");
+
+h.className="floating-heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.bottom="-50px";
+
+h.style.animationDuration=(10+Math.random()*10)+"s";
+
+h.style.animationDelay=Math.random()*12+"s";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+<div class="container">
+
+<div class="hero">
+
+<h1 class="title">
+Esta noche, mi corazón decidió amarte<br>
+como si el universo hubiera nacido para nosotros
+</h1>
+
+<div class="separator"></div>
+
+<div class="subtitle">
+UN AMOR ESCRITO ENTRE CONSTELACIONES
+</div>
+
+<div class="date">
+Sábado, 4 de julio de 2026 — Noche
+</div>
+
+<div class="letter">
+
+<p>
+
+<span class="drop">M</span>i princesa hermosa...
+
+Hay noches que pasan sin dejar huella... pero esta no.
+
+Esta noche tiene tu nombre escondido entre las estrellas, porque desde que llegaste a mi vida entendí que el cielo no solo se mira hacia arriba: también puede abrazarse cuando una persona correcta entra en tu corazón.
+
+</p>
+
+<p>
+
+Quiero que sepas que no existe un solo rincón de mí que no esté profundamente enamorado de ti. Amo tu sonrisa cuando aparece sin avisar, amo la calma que siento al imaginar tu voz y amo incluso esos pequeños detalles tuyos que quizás tú ni siquiera notas, porque son ellos los que hacen que seas completamente irremplazable.
+
+</p>
+
+<div class="quote">
+
+"Si el universo tuviera un centro, para mí siempre estaría exactamente donde estás tú."
+
+</div>
+
+<p>
+
+Si esta noche pudiera pedir un solo deseo, no pediría riquezas, ni suerte, ni un futuro perfecto. Pediría seguir caminando contigo, porque contigo cualquier camino deja de dar miedo y cualquier sueño parece posible.
+
+</p>
+
+<p>
+
+Quisiera tomar tu mano, acercarte lentamente a mi pecho y dejar que escucharas cómo mi corazón pronuncia tu nombre con cada latido. Porque si existe un idioma que nunca aprenderé a esconder, es el del amor inmenso que siento por ti.
+
+</p>
+
+
+<p>
+
+Y si algún día las luces del mundo se apagaran, todavía encontraría el camino hacia ti. No por la vista, sino porque mi alma aprendió hace mucho tiempo dónde pertenece.
+
+</p>
+
+<p>
+
+Gracias por existir. Gracias por convertir mis días comunes en recuerdos extraordinarios y por enseñarme que el amor verdadero no necesita ser perfecto para sentirse infinito.
+
+</p>
+
+<div class="promise">
+
+<h2>Mi promesa para esta noche</h2>
+
+<p>
+
+Esta noche, bajo este mismo cielo que nos cubre a los dos, quiero prometerte algo muy sencillo, pero eterno: mientras mi corazón siga latiendo, siempre encontrará una razón más para amarte que el día anterior.
+
+</p>
+
+</div>
+
+<p>
+
+Buenas noches, mi vida.
+
+</p>
+
+<p>
+
+Que cierres los ojos con la tranquilidad de saber que, en algún lugar de este mismo cielo, hay un hombre que sonríe simplemente porque tú existes... y que te ama con una intensidad que las palabras jamás podrán alcanzar.
+
+</p>
+
+<div class="quote">
+
+Te amo más de lo que esta noche puede explicar, más de lo que las estrellas pueden contar y más de lo que el tiempo será capaz de medir. ❤️
+
+</div>
+
+</div>
+
+<div class="footerGlow"></div>
+
+<div class="signature">
+
+<div class="goodnight">
+
+Con todo mi corazón...
+
+</div>
+
+<div class="name">
+
+Para siempre tuyo ❤️
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
